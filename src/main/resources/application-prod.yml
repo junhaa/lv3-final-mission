@@ -1,6 +1,6 @@
 spring:
   config:
-    import: classpath:application-secrets-dev.yml
+    import: classpath:application-secrets-prod.yml
 
   datasource:
     url: ${db.url}
