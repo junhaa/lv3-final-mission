@@ -15,19 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
       # application-secrets-dev.yml 파일 생성
       - name: make application-secrets-dev.yml
         run: |
           mkdir -p src/main/resources  
           echo "$APPLICATION_DEV_SECRET" > src/main/resources/application-secrets-dev.yml
         env:
-          APPLICATION_SECRET: ${{ secrets.APPLICATION_DEV_SECRET }}
+          APPLICATION_DEV_SECRET: ${{ secrets.APPLICATION_DEV_SECRET }}
 
       # gradlew 실행 권한 부여
       - name: Grant execute permission for gradlew
