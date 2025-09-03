@@ -55,7 +55,8 @@ jobs:
           fi
           
           # 새 JAR 복사
-          cp $GITHUB_WORKSPACE/build/libs/*.jar ~/app/app.jar
+          pwd
+          cp build/libs/*.jar ~/app/app.jar
           
           # 애플리케이션 실행
           cd ~/app
