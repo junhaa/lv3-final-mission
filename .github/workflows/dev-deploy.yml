@@ -25,9 +25,9 @@ jobs:
       - name: make application-secrets-dev.yml
         run: |
           mkdir -p src/main/resources  
-          echo "$APPLICATION_SECRET" > src/main/resources/application-secrets-dev.yml
+          echo "$APPLICATION_DEV_SECRET" > src/main/resources/application-secrets-dev.yml
         env:
-          APPLICATION_SECRET: ${{ secrets.APPLICATION_SECRET }}
+          APPLICATION_SECRET: ${{ secrets.APPLICATION_DEV_SECRET }}
 
       # gradlew 실행 권한 부여
       - name: Grant execute permission for gradlew
