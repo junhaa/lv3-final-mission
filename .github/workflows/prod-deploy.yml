@@ -56,7 +56,7 @@ jobs:
           cd ~/app
           nohup java -jar app.jar \
             --server.port=8080 \
-            --spring.profiles.active=dev \
+            --spring.profiles.active=prod \
             > app.log 2>&1 &
           
           echo "Application started with PID: $!"
