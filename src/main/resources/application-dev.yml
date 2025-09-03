@@ -1,0 +1,36 @@
+spring:
+  config:
+    import: classpath:application-secrets-dev.yml
+
+  datasource:
+    url: ${db.url}
+    username: ${db.username}
+    password: ${db.password}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
+  logging:
+    level:
+      root: debug
+
+security:
+  jwt:
+    token:
+      secretKey: ${security.jwt.token.secretKey}
+      expireLength: ${security.jwt.token.expireLength}
+
+email:
+  sendgrid:
+    apiKey: ${email.sendgrid.apiKey}
+    senderEmail: ${email.sendgrid.senderEmail}
+    base-url: https://api.sendgrid.com
+    connect-timeout: 5000
+    read-timeout: 30000
