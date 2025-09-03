@@ -17,9 +17,15 @@ spring:
     init:
       mode: always
 
-  logging:
-    level:
-      root: debug
+logging:
+  level:
+    root: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics,prometheus"
 
 security:
   jwt:
